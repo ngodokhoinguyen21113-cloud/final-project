@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.auth-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333333;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.input-group input:not([type="image"]) { /* Áp dụng cho các ô nhập liệu, trừ nút hình ảnh */
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group input:not([type="image"]):focus {
+    border-color: #007bff;
+}
+
+/* Định dạng cho container chứa nút hình ảnh */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Định dạng cho nút hình ảnh */
+.btn-img-submit {
+    max-width: 33%; /* Giới hạn chiều rộng nếu hình ảnh quá lớn */
+    height: 33%; /* Giữ tỷ lệ */
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s; /* Hiệu ứng khi di chuột */
+}
+
+.btn-img-submit:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+    opacity: 0.9; /* Giảm độ mờ một chút */
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
