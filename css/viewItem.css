@@ -1,0 +1,200 @@
+/* ==========================================================================
+   viewitem.css — Trang chi tiết sản phẩm (2 cột + thumbnail + Like/Dislike)
+   Nhúng ở: viewItem.html
+   ========================================================================== */
+.item-detail-container {
+    display: flex;
+    gap: 32px;
+    background: rgba(24, 26, 31, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 10px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.detail-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.detail-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #33363e;
+    background-color: #111216;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.thumb-item {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #33363e;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #181a1f;
+}
+
+.thumb-item:hover {
+    border-color: #00a2ff;
+    transform: translateY(-2px);
+}
+
+.thumb-item.active {
+    border-color: #00a2ff;
+    box-shadow: 0 0 8px rgba(0, 162, 255, 0.5);
+}
+
+.detail-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-title {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.info-box {
+    background: #181a1f;
+    border: 1.5px solid #2e3137;
+    border-radius: 12px;
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Tìm đến đoạn .info-content trong file viewItem.css và cập nhật lại như sau: */
+.info-content {
+    margin-bottom: 20px;
+    
+    /* Thêm các dòng bên dưới để xử lý xuống dòng khi link/text quá dài */
+    word-break: break-word;       /* Tự động cắt các link URL dài xuống dòng */
+    overflow-wrap: anywhere;      /* Đảm bảo không bị đè hay tràn khỏi khung */
+    white-space: pre-line;        /* Giữ nguyên định dạng xuống dòng tự nhiên */
+    max-width: 100%;              /* Giới hạn không vượt quá chiều rộng khung chứa */
+}
+
+.action-box {
+    background: #23252b;
+    border: 1px solid #33363e;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.detail-price-text {
+    font-size: 28px;
+    color: #00a2ff;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Yêu thích / Like / Dislike (hàng nút dưới "Buy Now")
+   ========================================================================== */
+.reaction-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.btn-reaction,
+.btn-favorite-detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #23272e;
+    border: 1px solid #33363e;
+    border-radius: 8px;
+    color: #a0a5b0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-reaction:hover {
+    border-color: #00a2ff;
+}
+
+.btn-reaction.active.like {
+    background: rgba(0, 200, 130, 0.15);
+    border-color: #00c882;
+    color: #00c882;
+}
+
+.btn-reaction.active.dislike {
+    background: rgba(255, 77, 77, 0.15);
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+.btn-favorite-detail.active {
+    background: rgba(255, 77, 109, 0.15);
+    border-color: #ff4d6d;
+    color: #ff4d6d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .item-detail-container {
+        flex-direction: column;
+    }
+    .detail-left {
+        max-width: 100%;
+    }
+}
+
+/* Style cho nút Buy Now tích hợp giá tiền */
+.btn-buy-now {
+    width: 100%;
+    padding: 14px 20px;
+    background: #0084ff;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+}
+
+.btn-buy-now:hover {
+    background: #0073e6;
+    transform: translateY(-1px);
+}
+
+.btn-buy-now:active {
+    transform: translateY(1px);
+}
+
+/* Icon Robux nằm bên trong nút */
+.robux-buy-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}

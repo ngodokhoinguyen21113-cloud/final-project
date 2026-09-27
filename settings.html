@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro-Store - Settings</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/light-mode.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo-container" style="cursor: pointer;" onclick="window.location.href='home.html'">
+                <img src="img/logo.png" alt="Ro-Store Logo" class="nav-logo">
+            </div>
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername">Player</strong>!</span>
+                <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar" style="cursor: pointer;" onclick="window.location.href='profile.html'" onerror="this.src='img/default-avartar.png'">
+                <button onclick="window.location.href='home.html'" class="btn-manage-nav">🏠 Home</button>
+                <button onclick="window.location.href='favorites.html'" class="btn-manage-nav">❤ Favorites</button>
+                <button id="logoutBtn" class="btn-logout">Log Out</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>Account Settings</h1>
+            <p>Manage your profile, appearance and security.</p>
+
+            <div class="settings-grid">
+                <!-- Profile -->
+                <section class="settings-card">
+                    <h2>Profile</h2>
+
+                    <div class="avatar-row">
+                        <img id="avatarPreview" src="img/logo.png" alt="Avatar" class="avatar-preview">
+                        <div class="custom-file-upload" style="margin-bottom: 0;">
+                            <input type="file" id="avatarFileInput" accept="image/*">
+                            <label for="avatarFileInput" class="btn-choose-file">Change Avatar</label>
+                        </div>
+                    </div>
+
+                    <label>Display Name:</label>
+                    <input type="text" id="nameInput" class="form-input" placeholder="Username">
+
+                    <button id="saveProfileBtn" class="btn-roblox" style="margin-top: 16px;">Save Profile</button>
+                    <p id="profileMessage" class="settings-message"></p>
+                </section>
+
+                <!-- Appearance -->
+                <section class="settings-card">
+                    <h2>Appearance</h2>
+
+                    <div class="theme-switch-row">
+                        <span>Dark</span>
+                        <label class="switch">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Light</span>
+                    </div>
+                </section>
+
+                <!-- Security -->
+                <section class="settings-card">
+                    <h2>Change Password</h2>
+
+                    <form id="passwordForm">
+                        <label>Current Password:</label>
+                        <input type="password" id="currentPasswordInput" class="form-input" required>
+
+                        <label>New Password:</label>
+                        <input type="password" id="newPasswordInput" class="form-input" required>
+
+                        <label>Confirm New Password:</label>
+                        <input type="password" id="confirmPasswordInput" class="form-input" required>
+
+                        <button type="submit" class="btn-roblox" style="margin-top: 16px;">Update Password</button>
+                    </form>
+                    <p id="passwordMessage" class="settings-message"></p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+
+</html>

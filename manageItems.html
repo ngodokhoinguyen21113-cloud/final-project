@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro-Store - Manage Items</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/manageitems.css">
+    <link rel="stylesheet" href="css/light-mode.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo-container" style="cursor: pointer;" onclick="window.location.href='home.html'">
+                <img src="img/logo.png" alt="Ro-Store Logo" class="nav-logo">
+            </div>
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername">Player</strong>!</span>
+                <div class="nav-menu-wrapper">
+                    <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar" style="cursor: pointer;" onclick="window.location.href='profile.html'" onerror="this.src='img/default-avartar.png'">
+                    <button id="navMenuBtn" class="btn-hamburger" aria-label="Menu">☰</button>
+                    <div id="navDropdown" class="nav-dropdown">
+                        <button onclick="window.location.href='profile.html'">👤 My Profile</button>
+                        <button onclick="window.location.href='favorites.html'">❤ Favorites</button>
+                        <button onclick="window.location.href='home.html'">🏠 Home</button>
+                        <button onclick="window.location.href='addItem.html'">+ Add Item</button>
+                        <button onclick="window.location.href='settings.html'">⚙ Settings</button>
+                        <button id="logoutBtn">🚪 Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>Manage My Items</h1>
+            <p>View, edit and delete items created by your account.</p>
+
+            <div id="myItemsGrid" class="items-grid"></div>
+        </main>
+    </div>
+
+    <!-- Modal Edit Item -->
+    <div id="editModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2>Edit Item</h2>
+            <form id="editItemForm">
+                <input type="hidden" id="editItemId">
+
+                <label>Item Name:</label>
+                <input type="text" id="editItemName" required class="form-input">
+
+                <label>Price (Robux):</label>
+                <input type="number" id="editItemPrice" min="0" required class="form-input">
+
+                <label>Description:</label>
+                <textarea id="editItemDesc" class="form-input"></textarea>
+
+                <label>Image URL / Base64:</label>
+                <input type="text" id="editItemImage" class="form-input">
+
+                <div class="modal-actions" style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button type="submit" class="btn-add-nav" style="flex: 1;">Save Changes</button>
+                    <button type="button" id="closeModalBtn" class="btn-logout"
+                        style="flex: 1; background: #40444d;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/manageItems.js"></script>
+</body>
+
+</html>

@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/final-project/css/css.css">
+    <title>Ro-store - Home</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/light-mode.css">
 </head>
+
 <body>
-    welcome home
+    <div class="home-container">
+        <nav class="navbar">
+            <!-- Logo & Thanh tìm kiếm giữ nguyên -->
+            <a href="home.html"><img src="img/logo.png" alt="Ro-Store" class="nav-logo"></a>
+
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Search items or creators...">
+            </div>
+
+            <!-- Khối thông tin user & các nút chức năng -->
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername">Player</strong>!</span>
+
+                <div class="notification-wrapper" style="position: relative; display: inline-block; z-index: 999999;">
+                    <!-- Thêm onclick="toggleNotifDropdown(event)" trực tiếp vào thẻ button -->
+                    <button id="notifBtn" type="button" class="btn-notif" onclick="toggleNotifDropdown(event)"
+                        style="background: #23272e; border: 1px solid #33363e; color: #ffffff; padding: 8px 12px; border-radius: 50%; cursor: pointer; position: relative;">
+                        🔔
+                        <span id="notifBadge" class="notif-badge"
+                            style="display: none; position: absolute; top: -4px; right: -4px; background: #ff4d4d; color: #fff; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 10px;">0</span>
+                    </button>
+
+                    <div id="notifDropdown" class="notif-dropdown"
+                        style="display: none; position: absolute; top: 45px; right: 0; width: 280px; max-height: 350px; background: #181a1f; border: 1px solid #33363e; border-radius: 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8); z-index: 999999; overflow-y: auto;">
+                        <div style="padding: 12px; border-bottom: 1px solid #2e3137;">
+                            <h3 style="margin: 0; font-size: 14px; color: #00a2ff;">🛍 Buyers Notification</h3>
+                        </div>
+                        <div id="notifList">
+                            <!-- Thông báo render tại đây -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút Add Item, Avatar & Hamburger giữ nguyên -->
+                <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar">
+
+                <div class="nav-menu-wrapper">
+                    <button id="hamburgerBtn" class="btn-hamburger">☰</button>
+                    <div id="navDropdown" class="nav-dropdown">
+                        <button onclick="window.location.href='profile.html'">👤 My Profile</button>
+                        <button onclick="window.location.href='favorites.html'">♥ Favorites</button>
+                        <button onclick="window.location.href='cart.html'">🛒 Shopping Cart</button>
+                        <!-- ĐÃ XÓA NÚT "+ Add Item" TRONG DROPDOWN -->
+                        <button onclick="window.location.href='manageItems.html'">📦 Manage Items</button>
+                        <button onclick="window.location.href='settings.html'">⚙ Settings</button>
+                        <button id="logoutBtn">🚪 Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div>
+                <h1>Item Dashboard</h1>
+                <p>Explore items or create your own custom Roblox items.</p>
+            </div>
+
+            <!-- Khu vực 1: Recent Items (Chỉ hiện khi có item vừa xem) -->
+            <section id="recentSection" style="margin-bottom: 35px; display: none;">
+                <span><button class="btn-add-item-nav" onclick="window.location.href='addItem.html'">+ Add
+                        Item</button></span>
+                <h2
+                    style="color: #00a2ff; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                    ⏱️ Recent Items
+                </h2>
+                <div id="recentGrid" class="items-grid"></div>
+            </section>
+
+            <!-- Khu vực Kết quả tìm kiếm: Profile (chỉ hiện khi đang tìm kiếm và có khớp) -->
+            <section id="profileResultsSection" style="margin-bottom: 35px; display: none;">
+                <h2 style="color: #00a2ff; font-size: 1.3rem; margin-bottom: 15px;">
+                    👤 Profiles Found
+                </h2>
+                <div id="profileResultsGrid" class="items-grid"></div>
+            </section>
+
+            <!-- Khu vực 2: Recommended / All Items -->
+            <section>
+                <h2 id="gridTitle" style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px;">
+                    🔥 Recommended Items
+                </h2>
+                <div id="itemsGrid" class="items-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Nhúng API helper trước, sau đó nhúng home.js -->
+    <script src="js/robloxApi.js"></script>
+    <script src="js/profileUtils.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
 </body>
+
 </html>

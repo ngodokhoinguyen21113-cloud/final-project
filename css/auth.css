@@ -1,0 +1,54 @@
+/* ==========================================================================
+   auth.css — Trang Login / Register (và khung form dùng lại ở Add Item)
+   Nhúng ở: index.html, register.html, addItem.html
+   ========================================================================== */
+.auth-container {
+    max-width: 420px;
+    width: 90%;
+    margin: 60px auto;
+    background: rgba(24, 26, 31, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.auth-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.auth-container h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.auth-container input,
+.auth-container textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    background: #181a1f;
+    border: 1px solid #33363e;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-container input:focus,
+.auth-container textarea:focus {
+    border-color: #00a2ff;
+    box-shadow: 0 0 10px rgba(0, 162, 255, 0.3);
+}
+
+.auth-switch {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #8f949e;
+}

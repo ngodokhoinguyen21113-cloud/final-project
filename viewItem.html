@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox - View Item</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/viewitem.css">
+    <link rel="stylesheet" href="css/light-mode.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo-container" style="margin-bottom: 0; cursor: pointer;"
+                onclick="window.location.href='home.html'">
+                <img src="img/logo.png" alt="Roblox Logo" class="nav-logo">
+            </div>
+
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Search items or creators...">
+            </div>
+
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername">Player</strong>!</span>
+                <div class="nav-menu-wrapper">
+                    <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar"
+                        style="cursor: pointer;" onclick="window.location.href='profile.html'"
+                        onerror="this.src='img/default-avartar.png'">
+                    <button id="navMenuBtn" class="btn-hamburger" aria-label="Menu">☰</button>
+                    <div id="navDropdown" class="nav-dropdown">
+                        <button onclick="window.location.href='profile.html'">👤 My Profile</button>
+                        <button onclick="window.location.href='favorites.html'">❤ Favorites</button>
+                        <button onclick="window.location.href='home.html'">🏠 Home</button>
+                        <button onclick="window.location.href='addItem.html'">+ Add Item</button>
+                        <button onclick="window.location.href='settings.html'">⚙ Settings</button>
+                        <button id="logoutBtn">🚪 Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Khung chi tiết Item -->
+        <main class="content">
+            <div class="item-detail-container">
+                <div class="detail-left">
+                    <img id="detailImg" src="img/logo.png" alt="Item Thumbnail" class="detail-img"
+                        onerror="this.src='img/logo.png'">
+                    <div class="thumbnail-list" id="thumbnailContainer"></div>
+                </div>
+
+                <div class="detail-right">
+                    <h1 id="detailName" class="detail-title">Item Name</h1>
+
+                    <div class="info-box">
+                        <div class="info-content">
+                            <p id="detailCreator" class="item-creator">Created by: <span>Unknown</span></p>
+                            <p id="detailDesc" class="item-desc">No description available.</p>
+                        </div>
+
+                        <!-- Thay thế khối hiển thị giá và nút bấm cũ bằng đoạn này -->
+                        <div class="action-box">
+                            <button id="buyBtn" class="btn-buy-now">
+                                <img src="img/robux-dark.png" id="buyRobuxIcon" alt="Robux" class="robux-buy-icon">
+                                <span id="buyItemPrice">1111</span>
+                                <span>Buy Now</span>
+                            </button>
+
+                            <!-- Hàng nút Yêu thích / Like / Dislike bên dưới -->
+                            <div class="reaction-row">
+                                <button id="favoriteBtn" class="btn-favorite-detail">♡ Yêu thích</button>
+                                <button id="likeBtn" class="btn-reaction">👍 <span id="likeCount">0</span></button>
+                                <button id="dislikeBtn" class="btn-reaction">👎 <span
+                                        id="dislikeCount">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </main>
+    </div>
+
+    <script src="js/robloxApi.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/viewItem.js"></script>
+</body>
+
+</html>

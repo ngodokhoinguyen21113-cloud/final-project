@@ -1,0 +1,62 @@
+/* ==========================================================================
+   forms.css — Các control form dùng chung: upload ảnh, ô nhập liệu chuẩn
+   Nhúng ở: addItem.html, manageItems.html, settings.html
+   ========================================================================== */
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #181a1f;
+    border: 1px solid #33363e;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.btn-choose-file {
+    background: #2e3137;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    border: 1px solid #40444d;
+    white-space: nowrap;
+}
+
+.btn-choose-file:hover {
+    background: #00a2ff;
+    border-color: #00a2ff;
+    transform: translateY(-1px);
+}
+
+#fileNameDisplay {
+    font-size: 13px;
+    color: #8f949e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Cập nhật .form-input trong forms.css */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    background: #23272e;
+    border: 1px solid #33363e;
+    border-radius: 6px;
+    color: #ffffff;
+    box-sizing: border-box; /* Đảm bảo input không tràn khỏi parent */
+    text-overflow: ellipsis; /* Tự động thu gọn chuỗi Base64 quá dài */
+}
+
+.form-input:focus {
+    border-color: #00a2ff;
+    outline: none;
+}

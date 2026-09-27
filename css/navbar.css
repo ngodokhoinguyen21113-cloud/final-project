@@ -1,0 +1,174 @@
+/* ==========================================================================
+   navbar.css — Thanh điều hướng: logo, tìm kiếm, avatar, menu hamburger (☰)
+   Nhúng ở mọi trang CÓ navbar (mọi trang trừ index.html, register.html)
+   ========================================================================== */
+.navbar {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(24, 26, 31, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 30px;
+    gap: 16px;
+}
+
+.nav-logo {
+    height: 38px;
+    display: block;
+}
+
+.nav-search {
+    flex: 1;
+    max-width: 400px;
+}
+
+.nav-search input {
+    width: 100%;
+    padding: 10px 16px;
+    background: #111216;
+    border: 1px solid #33363e;
+    border-radius: 20px;
+    color: #ffffff;
+    outline: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+}
+
+/* Avatar hiển thị trên Navbar */
+.nav-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00a2ff;
+    background: #111216;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Menu dạng Hamburger (☰) — xổ xuống Home / Add Item / Settings / Log Out...
+   ========================================================================== */
+.nav-menu-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2e3137;
+    border: 1px solid #40444d;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-hamburger:hover {
+    background: #3a3d45;
+    border-color: #00a2ff;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #181a1f;
+    border: 1px solid #33363e;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    z-index: 200;
+}
+
+.nav-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    width: 100%;
+}
+
+.nav-dropdown button:hover {
+    background: #2e3137;
+    color: #00a2ff;
+}
+
+.nav-dropdown button#logoutBtn:hover {
+    background: rgba(255, 77, 77, 0.12);
+    color: #ff4d4d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Style nút + Add Item nằm trên Navbar */
+.btn-add-item-nav {
+    background: #00a2ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.btn-add-item-nav:hover {
+    background: #0084ff;
+    transform: translateY(-1px);
+}
+
+.btn-add-item-nav:active {
+    transform: translateY(1px);
+}
+
+/* Đảm bảo navbar cho phép hiển thị các phần tử con tràn ra ngoài */
+.navbar, .user-info, .notification-wrapper {
+    overflow: visible !important;
+}

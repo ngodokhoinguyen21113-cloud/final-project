@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro-store - Shopping Cart</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <header class="navbar">
+            <div class="logo-container" onclick="window.location.href='home.html'">
+                <img src="img/logo.png" alt="Roblox Logo" class="nav-logo">
+            </div>
+
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername"></strong>!</span>
+                <div class="nav-menu-wrapper">
+                    <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar" style="cursor: pointer;" onclick="window.location.href='profile.html'" onerror="this.src='img/default-avartar.png'">
+                    <button id="navMenuBtn" class="btn-hamburger" aria-label="Menu">☰</button>
+                    <div id="navDropdown" class="nav-dropdown">
+                        <button onclick="window.location.href='profile.html'">👤 My Profile</button>
+                        <button onclick="window.location.href='cart.html'">🛒 Shopping Cart</button>
+                        <button onclick="window.location.href='addItem.html'">+ Add Item</button>
+                        <button onclick="window.location.href='manageItems.html'">📦 Manage Items</button>
+                        <button onclick="window.location.href='settings.html'">⚙ Settings</button>
+                        <button id="logoutBtn">🚪 Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <h1>🛒 Your Shopping Cart</h1>
+            <p>Review items before completing your purchase.</p>
+
+            <div id="cartContainer" style="margin-top: 25px;">
+                <div id="cartItemsList" class="items-grid"></div>
+
+                <div id="cartSummary" style="margin-top: 30px; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="color: #fff; font-size: 1.2rem;">Total Price: <span id="totalPriceDisplay" style="color: #00a2ff;">0</span> Robux</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="clearCartBtn" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Clear Cart</button>
+                        <button id="checkoutBtn" style="padding: 10px 20px; background: #2ecc71; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

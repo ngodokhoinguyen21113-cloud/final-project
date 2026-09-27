@@ -1,0 +1,106 @@
+/* ==========================================================================
+   light-mode.css — Toàn bộ ghi đè cho chế độ Sáng (Light Mode)
+   Kích hoạt bằng class "light-mode" trên <html> (xem js/theme.js)
+   QUAN TRỌNG: nhúng file này SAU CÙNG trên MỌI trang, sau tất cả CSS khác,
+   vì nó ghi đè màu sắc/nền của gần như mọi thành phần trong site.
+   ========================================================================== */
+html.light-mode body {
+    background-color: #f4f6fa;
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(0, 102, 255, 0.08), transparent 70%),
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    color: #14161a;
+}
+
+html.light-mode .auth-container,
+html.light-mode .navbar,
+html.light-mode .game-card,
+html.light-mode .item-detail-container,
+html.light-mode .info-box,
+html.light-mode .settings-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #14161a;
+}
+
+html.light-mode .action-box,
+html.light-mode .modal-content,
+html.light-mode .custom-file-upload {
+    background: #eef1f5;
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #14161a;
+}
+
+html.light-mode .auth-container input,
+html.light-mode .auth-container textarea,
+html.light-mode .nav-search input,
+html.light-mode .form-input {
+    background: #ffffff;
+    border-color: #d5d9e0;
+    color: #14161a;
+}
+
+html.light-mode .content p,
+html.light-mode .item-desc,
+html.light-mode .item-creator,
+html.light-mode .auth-switch,
+html.light-mode #fileNameDisplay,
+html.light-mode .settings-card label {
+    color: #5a606b;
+}
+
+html.light-mode .detail-title,
+html.light-mode .game-card h3,
+html.light-mode .content h1,
+html.light-mode .auth-container h2 {
+    color: #14161a;
+}
+
+html.light-mode .btn-logout,
+html.light-mode .btn-manage-nav,
+html.light-mode .btn-choose-file {
+    background: #e4e7ec;
+    color: #14161a;
+    border-color: #d5d9e0;
+}
+
+/* #gridTitle dùng style="color: #ffffff" ngay trong HTML nên cần !important
+   mới ghi đè được (inline style luôn ưu tiên hơn CSS thường). */
+html.light-mode #gridTitle {
+    color: #14161a !important;
+}
+
+html.light-mode .slider {
+    background-color: #ccd2db;
+}
+
+html.light-mode .nav-dropdown {
+    background: #ffffff;
+    border-color: #d5d9e0;
+}
+
+html.light-mode .nav-dropdown button {
+    color: #14161a;
+}
+
+html.light-mode .nav-dropdown button:hover {
+    background: #eef1f5;
+}
+
+html.light-mode .btn-hamburger {
+    background: #e4e7ec;
+    color: #14161a;
+    border-color: #d5d9e0;
+}
+
+html.light-mode .profile-meta {
+    color: #5a606b;
+}
+
+html.light-mode .btn-reaction,
+html.light-mode .btn-favorite-detail {
+    background: #eef1f5;
+    color: #5a606b;
+    border-color: #d5d9e0;
+}

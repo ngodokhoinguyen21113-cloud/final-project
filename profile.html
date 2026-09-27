@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro-Store - Profile</title>
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/light-mode.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo-container" style="cursor: pointer;" onclick="window.location.href='home.html'">
+                <img src="img/logo.png" alt="Ro-Store Logo" class="nav-logo">
+            </div>
+            <div class="user-info">
+                <span>Welcome, <strong id="displayUsername">Player</strong>!</span>
+                <div class="nav-menu-wrapper">
+                    <img id="navAvatar" class="nav-avatar" src="img/default-avartar.png" alt="Avatar" style="cursor: pointer;" onclick="window.location.href='profile.html'" onerror="this.src='img/default-avartar.png'">
+                    <button id="navMenuBtn" class="btn-hamburger" aria-label="Menu">☰</button>
+                    <div id="navDropdown" class="nav-dropdown">
+                        <button onclick="window.location.href='home.html'">🏠 Home</button>
+                        <button onclick="window.location.href='addItem.html'">+ Add Item</button>
+                        <button onclick="window.location.href='manageItems.html'">📦 Manage Items</button>
+                        <button onclick="window.location.href='settings.html'">⚙ Settings</button>
+                        <button id="logoutBtn">🚪 Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Header -->
+        <main class="content">
+            <section class="profile-header">
+                <img id="profileAvatar" class="profile-avatar-big" src="img/default-avartar.png" alt="Avatar">
+                <div class="profile-info">
+                    <h1 id="profileName" class="profile-name">Username</h1>
+                    <p id="profileMeta" class="profile-meta"></p>
+                </div>
+            </section>
+
+            <!-- Chỉ hiện với owner khi xem profile người khác -->
+            <div id="ownerControls" style="display: none; margin-bottom: 25px;">
+                <button id="toggleVerifiedBtn" class="btn-manage-nav">Verify user</button>
+            </div>
+
+            <h2 style="color: #00a2ff; font-size: 1.3rem; margin-bottom: 15px;">
+                📦 <span id="profileNameInline"></span>'s item(s)
+            </h2>
+            <div id="profileItemsGrid" class="items-grid"></div>
+        </main>
+    </div>
+
+    <script src="js/profileUtils.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

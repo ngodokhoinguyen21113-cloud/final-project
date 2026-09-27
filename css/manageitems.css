@@ -1,0 +1,55 @@
+/* ==========================================
+   FIX MODAL CĂN GIỮA MÀN HÌNH
+   ========================================== */
+
+/* Lớp nền đen mờ phủ toàn bộ màn hình */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Nền tối mờ */
+    backdrop-filter: blur(4px); /* Hiệu ứng mờ nền */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Đảm bảo luôn nằm trên cùng */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Khung nội dung Form nhỏ gọn ở giữa */
+.modal-content {
+    background: #181a1f;
+    border: 1px solid #33363e;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 480px; /* Giới hạn chiều rộng gọn gàng */
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #b9bbbe;
+}
+
+/* Đảm bảo ô input không vỡ giao diện */
+.modal-content input.form-input,
+.modal-content textarea.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+}
